@@ -1,14 +1,14 @@
-AI Response Quality Evaluator Agent
+=>AI Response Quality Evaluator Agent
 
 
-Project Overview
+->Project Overview
 
 This project focuses on evaluating AI-generated responses using multiple quality metrics such as relevance, accuracy, completeness, and hallucination detection. The system uses Retrieval-Augmented Generation (RAG) to retrieve trusted information and generate reliable evaluation results.
 
 
 
 
-Problem Statement
+->Problem Statement
 
 Large Language Models can generate incorrect or misleading responses. This project aims to build an automated system that evaluates AI responses and provides meaningful feedback based on different quality metrics.
 
@@ -16,7 +16,7 @@ Large Language Models can generate incorrect or misleading responses. This proje
 
 
 
-Key Features
+->Key Features
 
 Response Quality Evaluation
 
@@ -32,7 +32,7 @@ Evaluation Report Generation
 
 
 
-Project Modules
+->Project Modules
 
 Evaluation Input Module
 
@@ -48,7 +48,7 @@ Result Display Module
 
 
 
-Evaluation Metrics
+->Evaluation Metrics
 
 Relevance
 
@@ -68,7 +68,7 @@ SQuAD
 
 
 
-Technology Stack
+->Technology Stack
 
 Python
 
@@ -92,7 +92,7 @@ Git and GitHub
 
 
 
-Current Progress
+->Current Progress
 
 Completed research on LLM evaluation techniques
 
@@ -108,7 +108,7 @@ Created the initial project repository
 
 
 
-Future Scope
+->Future Scope
 
 Implement the evaluation pipeline
 
