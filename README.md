@@ -6,9 +6,13 @@ Project Overview
 This project focuses on evaluating AI-generated responses using multiple quality metrics such as relevance, accuracy, completeness, and hallucination detection. The system uses Retrieval-Augmented Generation (RAG) to retrieve trusted information and generate reliable evaluation results.
 
 
+
+
 Problem Statement
 
 Large Language Models can generate incorrect or misleading responses. This project aims to build an automated system that evaluates AI responses and provides meaningful feedback based on different quality metrics.
+
+
 
 
 
@@ -26,6 +30,8 @@ Evaluation Report Generation
 
 
 
+
+
 Project Modules
 
 Evaluation Input Module
@@ -37,6 +43,8 @@ Response Evaluation Module
 Scoring Module
 
 Result Display Module
+
+
 
 
 
@@ -55,6 +63,8 @@ Datasets
 TruthfulQA
 
 SQuAD
+
+
 
 
 
@@ -80,6 +90,8 @@ Git and GitHub
 
 
 
+
+
 Current Progress
 
 Completed research on LLM evaluation techniques
@@ -91,6 +103,8 @@ Designed the system workflow
 Finalized the technology stack
 
 Created the initial project repository
+
+
 
 
 
