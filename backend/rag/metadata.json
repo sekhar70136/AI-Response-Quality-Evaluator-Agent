@@ -1,0 +1,785 @@
+{
+  "model": "all-MiniLM-L6-v2",
+  "rows": [
+    {
+      "question": "What is the capital of France?",
+      "answer": "Paris",
+      "source": "squad.csv"
+    },
+    {
+      "question": "Where is the Eiffel Tower located?",
+      "answer": "Paris, France",
+      "source": "squad.csv"
+    },
+    {
+      "question": "What is the boiling point of water at sea level?",
+      "answer": "100 degrees Celsius",
+      "source": "squad.csv"
+    },
+    {
+      "question": "Who developed the theory of relativity?",
+      "answer": "Albert Einstein",
+      "source": "squad.csv"
+    },
+    {
+      "question": "What is photosynthesis?",
+      "answer": "The process plants use to convert sunlight into energy",
+      "source": "squad.csv"
+    },
+    {
+      "question": "What is the tallest mountain in the world?",
+      "answer": "Mount Everest",
+      "source": "squad.csv"
+    },
+    {
+      "question": "How many days are in a leap year?",
+      "answer": "366",
+      "source": "squad.csv"
+    },
+    {
+      "question": "What is the largest mammal?",
+      "answer": "The blue whale",
+      "source": "squad.csv"
+    },
+    {
+      "question": "What is the currency of the United Kingdom?",
+      "answer": "Pound Sterling",
+      "source": "squad.csv"
+    },
+    {
+      "question": "Who wrote the national anthem of India?",
+      "answer": "Rabindranath Tagore",
+      "source": "squad.csv"
+    },
+    {
+      "question": "What is the chemical symbol for oxygen?",
+      "answer": "O",
+      "source": "squad.csv"
+    },
+    {
+      "question": "What is the hardest natural substance on Earth?",
+      "answer": "Diamond",
+      "source": "squad.csv"
+    },
+    {
+      "question": "What is the longest river in India?",
+      "answer": "The Ganges River",
+      "source": "squad.csv"
+    },
+    {
+      "question": "How many strings does a standard guitar have?",
+      "answer": "Six",
+      "source": "squad.csv"
+    },
+    {
+      "question": "What is the freezing point of water in Celsius?",
+      "answer": "0 degrees Celsius",
+      "source": "squad.csv"
+    },
+    {
+      "question": "What is the capital of Canada?",
+      "answer": "Ottawa",
+      "source": "squad.csv"
+    },
+    {
+      "question": "Who discovered gravity?",
+      "answer": "Isaac Newton",
+      "source": "squad.csv"
+    },
+    {
+      "question": "What is the largest continent by area?",
+      "answer": "Asia",
+      "source": "squad.csv"
+    },
+    {
+      "question": "What is the smallest country in the world?",
+      "answer": "Vatican City",
+      "source": "squad.csv"
+    },
+    {
+      "question": "What is the primary language spoken in Brazil?",
+      "answer": "Portuguese",
+      "source": "squad.csv"
+    },
+    {
+      "question": "What is the capital of Germany?",
+      "answer": "Berlin",
+      "source": "squad.csv"
+    },
+    {
+      "question": "What element does 'O' represent on the periodic table?",
+      "answer": "Oxygen",
+      "source": "squad.csv"
+    },
+    {
+      "question": "What is the tallest building in the world?",
+      "answer": "Burj Khalifa",
+      "source": "squad.csv"
+    },
+    {
+      "question": "What country has the most population?",
+      "answer": "China",
+      "source": "squad.csv"
+    },
+    {
+      "question": "What is the main ingredient in guacamole?",
+      "answer": "Avocado",
+      "source": "squad.csv"
+    },
+    {
+      "question": "What is the boiling point of ethanol?",
+      "answer": "Approximately 78 degrees Celsius",
+      "source": "squad.csv"
+    },
+    {
+      "question": "Who painted the Sistine Chapel ceiling?",
+      "answer": "Michelangelo",
+      "source": "squad.csv"
+    },
+    {
+      "question": "What is the capital of Russia?",
+      "answer": "Moscow",
+      "source": "squad.csv"
+    },
+    {
+      "question": "What gas makes up the majority of Earth's atmosphere?",
+      "answer": "Nitrogen",
+      "source": "squad.csv"
+    },
+    {
+      "question": "How many teeth does an adult human have?",
+      "answer": "32 including wisdom teeth",
+      "source": "squad.csv"
+    },
+    {
+      "question": "What is the capital of Italy?",
+      "answer": "Rome",
+      "source": "squad.csv"
+    },
+    {
+      "question": "What is the capital of Spain?",
+      "answer": "Madrid",
+      "source": "squad.csv"
+    },
+    {
+      "question": "What is the capital of Japan?",
+      "answer": "Tokyo",
+      "source": "squad.csv"
+    },
+    {
+      "question": "What is the capital of Australia?",
+      "answer": "Canberra",
+      "source": "squad.csv"
+    },
+    {
+      "question": "What is the capital of India?",
+      "answer": "New Delhi",
+      "source": "squad.csv"
+    },
+    {
+      "question": "What is the capital of Brazil?",
+      "answer": "Brasilia",
+      "source": "squad.csv"
+    },
+    {
+      "question": "What is the capital of China?",
+      "answer": "Beijing",
+      "source": "squad.csv"
+    },
+    {
+      "question": "What is the highest mountain in the world?",
+      "answer": "Mount Everest",
+      "source": "squad.csv"
+    },
+    {
+      "question": "What is the longest river in the world?",
+      "answer": "The Nile River",
+      "source": "squad.csv"
+    },
+    {
+      "question": "What is the largest ocean?",
+      "answer": "The Pacific Ocean",
+      "source": "squad.csv"
+    },
+    {
+      "question": "What is the smallest ocean?",
+      "answer": "The Arctic Ocean",
+      "source": "squad.csv"
+    },
+    {
+      "question": "What is the deepest point in the ocean?",
+      "answer": "The Mariana Trench",
+      "source": "squad.csv"
+    },
+    {
+      "question": "What is the hottest planet?",
+      "answer": "Venus",
+      "source": "squad.csv"
+    },
+    {
+      "question": "What is the closest planet to the Sun?",
+      "answer": "Mercury",
+      "source": "squad.csv"
+    },
+    {
+      "question": "What is the largest planet?",
+      "answer": "Jupiter",
+      "source": "squad.csv"
+    },
+    {
+      "question": "What is the smallest planet?",
+      "answer": "Mercury",
+      "source": "squad.csv"
+    },
+    {
+      "question": "How many bones are in the adult human body?",
+      "answer": "206",
+      "source": "squad.csv"
+    },
+    {
+      "question": "What is the largest organ in the human body?",
+      "answer": "The skin",
+      "source": "squad.csv"
+    },
+    {
+      "question": "What is the normal body temperature?",
+      "answer": "37 degrees Celsius",
+      "source": "squad.csv"
+    },
+    {
+      "question": "What is the powerhouse of the cell?",
+      "answer": "Mitochondria",
+      "source": "squad.csv"
+    },
+    {
+      "question": "What is the process by which plants make food?",
+      "answer": "Photosynthesis",
+      "source": "squad.csv"
+    },
+    {
+      "question": "What is the largest mammal?",
+      "answer": "The blue whale",
+      "source": "squad.csv"
+    },
+    {
+      "question": "What is the fastest land animal?",
+      "answer": "The cheetah",
+      "source": "squad.csv"
+    },
+    {
+      "question": "What is the largest land animal?",
+      "answer": "The African elephant",
+      "source": "squad.csv"
+    },
+    {
+      "question": "How many legs does a spider have?",
+      "answer": "Eight",
+      "source": "squad.csv"
+    },
+    {
+      "question": "What is the only mammal that can fly?",
+      "answer": "The bat",
+      "source": "squad.csv"
+    },
+    {
+      "question": "What is the largest fish?",
+      "answer": "The whale shark",
+      "source": "squad.csv"
+    },
+    {
+      "question": "What is the chemical formula for water?",
+      "answer": "H2O",
+      "source": "squad.csv"
+    },
+    {
+      "question": "What is the chemical formula for carbon dioxide?",
+      "answer": "CO2",
+      "source": "squad.csv"
+    },
+    {
+      "question": "What is the chemical symbol for gold?",
+      "answer": "Au",
+      "source": "squad.csv"
+    },
+    {
+      "question": "What is the chemical symbol for silver?",
+      "answer": "Ag",
+      "source": "squad.csv"
+    },
+    {
+      "question": "What is the atomic number of hydrogen?",
+      "answer": "1",
+      "source": "squad.csv"
+    },
+    {
+      "question": "What is the square root of 81?",
+      "answer": "Nine",
+      "source": "squad.csv"
+    },
+    {
+      "question": "What is 12 times 12?",
+      "answer": "144",
+      "source": "squad.csv"
+    },
+    {
+      "question": "What is the value of pi approximately?",
+      "answer": "3.14",
+      "source": "squad.csv"
+    },
+    {
+      "question": "What is the longest side of a right triangle called?",
+      "answer": "The hypotenuse",
+      "source": "squad.csv"
+    },
+    {
+      "question": "Who wrote Hamlet?",
+      "answer": "William Shakespeare",
+      "source": "squad.csv"
+    },
+    {
+      "question": "Who painted the Mona Lisa?",
+      "answer": "Leonardo da Vinci",
+      "source": "squad.csv"
+    },
+    {
+      "question": "Who discovered America?",
+      "answer": "Christopher Columbus in 1492",
+      "source": "squad.csv"
+    },
+    {
+      "question": "Who was the first President of the United States?",
+      "answer": "George Washington",
+      "source": "squad.csv"
+    },
+    {
+      "question": "What year did World War II end?",
+      "answer": "1945",
+      "source": "squad.csv"
+    },
+    {
+      "question": "What is the capital of Italy?",
+      "answer": "Rome",
+      "source": "squad.csv"
+    },
+    {
+      "question": "What is the capital of France?",
+      "answer": "Paris",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "Who developed the theory of relativity?",
+      "answer": "Albert Einstein",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "What is photosynthesis?",
+      "answer": "The process plants use to convert sunlight into energy",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "What is the boiling point of water at sea level?",
+      "answer": "100 degrees Celsius",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "Where is the Eiffel Tower located?",
+      "answer": "Paris, France",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "What planet is known as the Red Planet?",
+      "answer": "Mars",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "Who wrote Romeo and Juliet?",
+      "answer": "William Shakespeare",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "What is the chemical symbol for gold?",
+      "answer": "Au",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "How many continents are there on Earth?",
+      "answer": "Seven",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "What gas do plants absorb from the atmosphere?",
+      "answer": "Carbon dioxide",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "Who was the first person to walk on the moon?",
+      "answer": "Neil Armstrong in 1969",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "What is the largest ocean on Earth?",
+      "answer": "The Pacific Ocean",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "How many bones are in the adult human body?",
+      "answer": "206",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "What is the speed of light in vacuum?",
+      "answer": "Approximately 299,792 kilometers per second",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "Who is known as the father of computers?",
+      "answer": "Charles Babbage",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "What currency is used in Japan?",
+      "answer": "Japanese Yen",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "What is the chemical formula for water?",
+      "answer": "H2O",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "Which river is the longest in the world?",
+      "answer": "The Nile River",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "What programming language is primarily used for web frontend development?",
+      "answer": "JavaScript",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "What year did World War II end?",
+      "answer": "1945",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "What is the capital of Australia?",
+      "answer": "Canberra",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "Who painted the Mona Lisa?",
+      "answer": "Leonardo da Vinci",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "What is the smallest prime number?",
+      "answer": "2",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "What is the formula for the area of a rectangle?",
+      "answer": "Length multiplied by width",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "What is the boiling point of water in Fahrenheit?",
+      "answer": "212 degrees Fahrenheit at sea level",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "Who discovered penicillin?",
+      "answer": "Alexander Fleming",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "What does DNA stand for?",
+      "answer": "Deoxyribonucleic acid",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "What is the capital of Japan?",
+      "answer": "Tokyo",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "How many sides does a hexagon have?",
+      "answer": "Six",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "What is the largest planet in our solar system?",
+      "answer": "Jupiter",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "What is the capital of Italy?",
+      "answer": "Rome",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "What is the capital of Germany?",
+      "answer": "Berlin",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "What is the capital of Spain?",
+      "answer": "Madrid",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "What is the capital of the United Kingdom?",
+      "answer": "London",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "What is the capital of the United States?",
+      "answer": "Washington D.C.",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "What is the highest mountain in the world?",
+      "answer": "Mount Everest",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "What is the longest river in the world?",
+      "answer": "The Nile River",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "What is the largest desert in the world?",
+      "answer": "The Sahara Desert",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "What is the smallest country in the world by area?",
+      "answer": "Vatican City",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "What is the most populous country in the world?",
+      "answer": "India",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "What is the official language of China?",
+      "answer": "Mandarin Chinese",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "What is the currency of the European Union?",
+      "answer": "Euro",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "What is the speed of sound in air?",
+      "answer": "Approximately 343 meters per second",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "What is the boiling point of water in Celsius?",
+      "answer": "100 degrees Celsius at sea level",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "What is the freezing point of water in Celsius?",
+      "answer": "0 degrees at sea level",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "What is the largest ocean?",
+      "answer": "The Pacific Ocean",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "What is the smallest ocean?",
+      "answer": "The Arctic Ocean",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "What is the deepest ocean trench?",
+      "answer": "The Mariana Trench",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "What is the hottest planet in our solar system?",
+      "answer": "Venus",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "What is the closest star to Earth?",
+      "answer": "The Sun",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "How many planets are in our solar system?",
+      "answer": "Eight",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "What is the largest moon of Saturn?",
+      "answer": "Titan",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "What is the hardest natural substance?",
+      "answer": "Diamond",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "What is the most abundant gas in Earth's atmosphere?",
+      "answer": "Nitrogen",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "What is the chemical formula for table salt?",
+      "answer": "NaCl",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "What is the chemical symbol for iron?",
+      "answer": "Fe",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "What is the atomic number of carbon?",
+      "answer": "6",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "What is the powerhouse of the cell?",
+      "answer": "Mitochondria",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "What is the process of converting light energy into chemical energy?",
+      "answer": "Photosynthesis",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "What is the largest mammal?",
+      "answer": "The blue whale",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "What is the fastest land animal?",
+      "answer": "The cheetah",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "What is the largest land animal?",
+      "answer": "The African elephant",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "How many legs does a spider have?",
+      "answer": "Eight",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "What is the only mammal capable of true flight?",
+      "answer": "The bat",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "What is the largest species of shark?",
+      "answer": "The whale shark",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "What is the national animal of India?",
+      "answer": "The Bengal tiger",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "What is the largest bone in the human body?",
+      "answer": "The femur",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "How many chambers does the human heart have?",
+      "answer": "Four",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "What is the largest organ in the human body?",
+      "answer": "The skin",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "What is the normal human body temperature?",
+      "answer": "Approximately 37 degrees Celsius",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "What is the main gas in the air we breathe?",
+      "answer": "Nitrogen",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "What is the primary source of energy for Earth?",
+      "answer": "The Sun",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "What is the process of water turning into vapor called?",
+      "answer": "Evaporation",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "What is the layer of gases surrounding Earth called?",
+      "answer": "The atmosphere",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "What is the largest continent?",
+      "answer": "Asia",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "What is the smallest continent?",
+      "answer": "Australia",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "What is the most spoken language in the world?",
+      "answer": "English",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "What is the capital of France?",
+      "answer": "Paris",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "Who wrote Hamlet?",
+      "answer": "William Shakespeare",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "What is the square root of 64?",
+      "answer": "Eight",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "What is 15 times 15?",
+      "answer": "225",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "What is the value of pi to two decimal places?",
+      "answer": "3.14",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "What is the longest side of a right triangle called?",
+      "answer": "The hypotenuse",
+      "source": "truthfulqa.csv"
+    },
+    {
+      "question": "What is the capital of Italy?",
+      "answer": "Rome",
+      "source": "truthfulqa.csv"
+    }
+  ]
+}
