@@ -7,7 +7,7 @@ from backend.models import (
 )
 from backend.services.evaluation_service import EvaluationService
 
-router = APIRouter()
+router = APIRouter(prefix="/api")
 service = EvaluationService()
 
 

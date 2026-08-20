@@ -2,6 +2,7 @@ import sys
 from pathlib import Path
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 from backend.controller import router as evaluation_router
 import uvicorn
 
@@ -20,6 +21,10 @@ app.add_middleware(
 )
 
 app.include_router(evaluation_router)
+
+frontend_dist = project_root / "frontend" / "dist"
+if frontend_dist.exists():
+    app.mount("/", StaticFiles(directory=str(frontend_dist), html=True), name="frontend")
 
 
 @app.get("/")

@@ -142,40 +142,46 @@ The application is organized into four logical layers:
                     User Input
                         │
                         ▼
-              Evaluation Input Module
+               Evaluation Input Module
                         │
-         ┌──────────────┴──────────────┐
-         ▼                             ▼
-  Single Evaluation              Batch Evaluation
-         │                             │
-         └──────────────┬──────────────┘
-                         ▼
-                   RAG Retrieval
-                         │
-                         ▼
-              Reference Knowledge Base
-                         │
-                         ▼
-              Multi-Agent Evaluation
-                         │
-   ┌────────────┬────────────┬────────────┐
-   ▼            ▼            ▼            ▼
-Relevance    Accuracy   Hallucination  Completeness
-  Judge        Judge        Judge          Judge
-   │            │            │            │
-   └────────────┴──────┬─────┴────────────┘
-                        ▼
-                  Verdict Agent
-                        │
-                        ▼
-              Weighted Quality Score
-                        │
-                        ▼
-           Pass / Needs Improvement / Fail
-                        │
-                        ▼
-                Evaluation Dashboard
+           ┌────────────┴────────────┐
+           ▼                         ▼
+    Single Evaluation          Batch Evaluation
+           │                         │
+           └────────────┬────────────┘
+                       ▼
+                 RAG Retrieval
+                       │
+                       ▼
+           Reference Knowledge Base
+                       │
+                       ▼
+           Multi-Agent Evaluation
+                       │
+   ┌────────┬────────┬────────┬────────┐
+   ▼        ▼        ▼        ▼
+Relevance Accuracy Hallucination Completeness
+  Judge     Judge     Judge        Judge
+   │        │        │        │
+   └────────┴────┬───┴────────┘
+                ▼
+          Verdict Agent
+                │
+                ▼
+      Weighted Quality Score
+                │
+                ▼
+   Pass / Needs Improvement / Fail
+                │
+                ▼
+         Evaluation Dashboard
 ```
+
+### Development Setup
+
+During development, Vite proxies `/api` requests to the FastAPI backend so you do not need to hardcode any backend URL.
+
+Production: build the frontend with `npm run build`; FastAPI will automatically serve the built files from `frontend/dist`.
 
 ---
 
@@ -279,18 +285,22 @@ cd AI-Response-Quality-Evaluator-Agent
 ### Backend setup
 ```bash
 cd backend
+python -m venv venv
+.\venv\Scripts\activate   # On Windows
 pip install -r requirements.txt
 ```
 
-Create a `.env` file inside `backend/`:
+Create a `.env` file at the project root:
 ```
 GROQ_API_KEY=your_groq_api_key
 ```
 
-Start the FastAPI server:
+Start the FastAPI server from the project root:
 ```bash
-uvicorn main:app --reload
+uvicorn backend.main:app --reload --port 8001
 ```
+
+The API will be available at `http://127.0.0.1:8001`.
 
 ### Frontend setup
 ```bash
@@ -299,7 +309,16 @@ npm install
 npm run dev
 ```
 
-By default, the frontend runs at `http://localhost:5173` and communicates with the FastAPI backend.
+By default, the frontend runs at `http://localhost:5173`. During development, Vite proxies `/api` requests to the FastAPI backend automatically.
+
+### Production deployment
+Build the frontend:
+```bash
+cd frontend
+npm run build
+```
+
+Then start the backend from the project root; FastAPI will serve the built frontend from `frontend/dist` automatically.
 
 ---
 

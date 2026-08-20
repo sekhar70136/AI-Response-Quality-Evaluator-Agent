@@ -78,6 +78,33 @@ function BatchEvaluation() {
     }
   };
 
+  const summary = results
+    ? {
+        total: results.total,
+        average_overall: results.average_overall_score.toFixed(2),
+        pass: results.passed,
+        needs_improvement: results.needs_improvement,
+        fail: results.failed,
+      }
+    : null;
+
+  const verdictColor = (verdict) => {
+    if (verdict === 'Pass') return 'text-green-700 bg-green-50';
+    if (verdict === 'Needs Improvement') return 'text-yellow-700 bg-yellow-50';
+    return 'text-red-700 bg-red-50';
+  };
+
+  const scoreColor = (score) => {
+    if (score == null) return 'text-slate-500';
+    if (score >= 8) return 'text-green-700';
+    if (score >= 5) return 'text-yellow-700';
+    return 'text-red-700';
+  };
+
+  const toggleExpand = (index) => {
+    setExpandedIndex(expandedIndex === index ? null : index);
+  };
+
   const exportPdf = () => {
     if (!results) return;
     const doc = new jsPDF({ unit: 'mm', format: 'a4' });
@@ -167,33 +194,6 @@ function BatchEvaluation() {
     });
 
     doc.save('batch_evaluation_report.pdf');
-  };
-
-  const summary = results
-    ? {
-        total: results.total,
-        average_overall: results.average_overall_score.toFixed(2),
-        pass: results.passed,
-        needs_improvement: results.needs_improvement,
-        fail: results.failed,
-      }
-    : null;
-
-  const verdictColor = (verdict) => {
-    if (verdict === 'Pass') return 'text-green-700 bg-green-50';
-    if (verdict === 'Needs Improvement') return 'text-yellow-700 bg-yellow-50';
-    return 'text-red-700 bg-red-50';
-  };
-
-  const scoreColor = (score) => {
-    if (score == null) return 'text-slate-500';
-    if (score >= 8) return 'text-green-700';
-    if (score >= 5) return 'text-yellow-700';
-    return 'text-red-700';
-  };
-
-  const toggleExpand = (index) => {
-    setExpandedIndex(expandedIndex === index ? null : index);
   };
 
   return (
