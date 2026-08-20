@@ -1,7 +1,7 @@
 import re
 from typing import List
 
-from backend.models import JudgeResult
+from models import JudgeResult
 
 
 class CompletenessJudge:

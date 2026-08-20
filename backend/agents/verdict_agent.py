@@ -1,4 +1,4 @@
-from backend.models import JudgeResult
+from models import JudgeResult
 
 
 class VerdictAgent:

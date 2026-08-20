@@ -2,7 +2,7 @@ from typing import List
 from datetime import datetime
 from uuid import uuid4
 
-from backend.models import (
+from models import (
     BatchEvaluationItem,
     BatchEvaluationResult,
     BatchEvaluationResponse,
@@ -11,12 +11,12 @@ from backend.models import (
     EvaluationRecord,
     JudgeResult,
 )
-from backend.rag.retriever import Retriever
-from backend.agents.relevance_judge import RelevanceJudge
-from backend.agents.accuracy_judge import AccuracyJudge
-from backend.agents.hallucination_judge import HallucinationJudge
-from backend.agents.completeness_judge import CompletenessJudge
-from backend.agents.verdict_agent import VerdictAgent
+from rag.retriever import Retriever
+from agents.relevance_judge import RelevanceJudge
+from agents.accuracy_judge import AccuracyJudge
+from agents.hallucination_judge import HallucinationJudge
+from agents.completeness_judge import CompletenessJudge
+from agents.verdict_agent import VerdictAgent
 
 
 class EvaluationService:

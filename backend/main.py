@@ -3,7 +3,7 @@ from pathlib import Path
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
-from backend.controller import router as evaluation_router
+from controller import router as evaluation_router
 import uvicorn
 
 project_root = Path(__file__).resolve().parents[1]

@@ -2,7 +2,7 @@ import re
 from difflib import SequenceMatcher
 from typing import List
 
-from backend.models import JudgeResult
+from models import JudgeResult
 
 
 class AccuracyJudge:

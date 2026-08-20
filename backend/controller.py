@@ -1,11 +1,11 @@
 from fastapi import APIRouter, HTTPException, Query
-from backend.models import (
+from models import (
     BatchEvaluationRequest,
     BatchEvaluationResponse,
     EvaluationRequest,
     EvaluationResponse,
 )
-from backend.services.evaluation_service import EvaluationService
+from services.evaluation_service import EvaluationService
 
 router = APIRouter(prefix="/api")
 service = EvaluationService()
