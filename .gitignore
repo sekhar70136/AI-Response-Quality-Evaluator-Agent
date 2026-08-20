@@ -6,19 +6,19 @@
 # Python
 venv/
 .venv/
-__pycache__/
-backend/__pycache__/
-prompts/__pycache__/
-rag/__pycache__/
-services/__pycache__/
+__pycache__/*
+backend/__pycache__/*
+prompts/__pycache__/*
+rag/__pycache__/*
+services/__pycache__/*
 
 *.pyc
 *.pyo
 *.pyd
 
 # Node
-node_modules/
-frontend/node_modules/
+node_modules/*
+frontend/node_modules/*
 
 # Build files
 dist/
