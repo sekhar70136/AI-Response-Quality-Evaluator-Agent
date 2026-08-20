@@ -1,6 +1,7 @@
 import { useState, useCallback } from 'react';
 import { evaluateBatch } from '../services/api';
 import BatchCharts from './BatchCharts';
+import jsPDF from 'jspdf';
 
 function BatchEvaluation() {
   const [rows, setRows] = useState([]);
@@ -77,39 +78,95 @@ function BatchEvaluation() {
     }
   };
 
-  const exportCsv = () => {
+  const exportPdf = () => {
     if (!results) return;
-    const headers = [
-      'Question',
-      'Overall Score',
-      'Verdict',
-      'Relevance',
-      'Accuracy',
-      'Hallucination',
-      'Completeness',
-      'Summary',
-    ];
-    const csvRows = [headers.join(',')];
-    for (const r of results.results) {
-      const row = [
-        `"${(r.question || '').replace(/"/g, '""')}"`,
-        r.overall_score,
-        r.verdict,
-        r.relevance.score,
-        r.accuracy.score,
-        r.hallucination.score,
-        r.completeness.score,
-        `"${(r.summary || '').replace(/"/g, '""')}"`,
+    const doc = new jsPDF({ unit: 'mm', format: 'a4' });
+    const pageWidth = doc.internal.pageSize.getWidth();
+    const margin = 15;
+    const usableWidth = pageWidth - margin * 2;
+    let y = margin;
+
+    doc.setFontSize(18);
+    doc.setFont('helvetica', 'bold');
+    doc.text('Batch Evaluation Report', margin, y);
+    y += 8;
+
+    doc.setFontSize(10);
+    doc.setFont('helvetica', 'normal');
+    doc.text(`Generated: ${new Date().toLocaleString()}`, margin, y);
+    y += 8;
+
+    if (summary) {
+      doc.setFontSize(12);
+      doc.setFont('helvetica', 'bold');
+      doc.text('Summary', margin, y);
+      y += 6;
+      doc.setFontSize(10);
+      doc.setFont('helvetica', 'normal');
+      const summaryLines = [
+        `Total Responses: ${summary.total}`,
+        `Average Overall Score: ${summary.average_overall}/10`,
+        `Pass / Needs Improvement / Fail: ${summary.pass} / ${summary.needs_improvement} / ${summary.fail}`,
+        `Pass Rate: ${summary.total ? Math.round((summary.pass / summary.total) * 100) : 0}%`,
       ];
-      csvRows.push(row.join(','));
+      summaryLines.forEach((line) => {
+        doc.text(line, margin, y);
+        y += 5;
+      });
+      y += 4;
     }
-    const blob = new Blob([csvRows.join('\n')], { type: 'text/csv;charset=utf-8;' });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = 'batch_evaluation_results.csv';
-    link.click();
-    URL.revokeObjectURL(url);
+
+    doc.setFontSize(12);
+    doc.setFont('helvetica', 'bold');
+    doc.text('Results', margin, y);
+    y += 6;
+
+    results.results.forEach((row, index) => {
+      if (y > 270) {
+        doc.addPage();
+        y = margin;
+      }
+
+      doc.setFontSize(10);
+      doc.setFont('helvetica', 'bold');
+      const questionText = doc.splitTextToSize(`Q${index + 1}: ${row.question || ''}`, usableWidth);
+      doc.text(questionText, margin, y);
+      y += questionText.length * 4.5;
+
+      doc.setFont('helvetica', 'normal');
+      const scoreLine = `Overall: ${row.overall_score}/10 | Verdict: ${row.verdict} | Relevance: ${row.relevance?.score ?? '-'}/10 | Accuracy: ${row.accuracy?.score ?? '-'}/10 | Hallucination: ${row.hallucination?.score ?? '-'}/10 | Completeness: ${row.completeness?.score ?? '-'}/10`;
+      const scoreLines = doc.splitTextToSize(scoreLine, usableWidth);
+      doc.text(scoreLines, margin, y);
+      y += scoreLines.length * 4.5;
+
+      if (row.summary) {
+        const summaryLines = doc.splitTextToSize(`Summary: ${row.summary}`, usableWidth);
+        doc.text(summaryLines, margin, y);
+        y += summaryLines.length * 4.2;
+      }
+
+      const details = [];
+      if (row.relevance?.reasoning) details.push(`Relevance: ${row.relevance.reasoning}`);
+      if (row.accuracy?.reasoning) details.push(`Accuracy: ${row.accuracy.reasoning}`);
+      if (row.hallucination?.reasoning) details.push(`Hallucination: ${row.hallucination.reasoning}`);
+      if (row.completeness?.reasoning) details.push(`Completeness: ${row.completeness.reasoning}`);
+      if (row.hallucination?.unsupported_claims?.length) details.push(`Unsupported Claims: ${row.hallucination.unsupported_claims.join('; ')}`);
+      if (row.completeness?.missing_points?.length && row.completeness.missing_points[0] !== 'None detected') details.push(`Missing Points: ${row.completeness.missing_points.join('; ')}`);
+
+      details.forEach((detail) => {
+        if (y > 270) {
+          doc.addPage();
+          y = margin;
+        }
+        const detailLines = doc.splitTextToSize(detail, usableWidth);
+        doc.text(detailLines, margin, y);
+        y += detailLines.length * 4.2;
+      });
+
+      y += 3;
+    });
+
+    doc.save('batch_evaluation_report.pdf');
   };
 
   const summary = results
@@ -168,10 +225,10 @@ function BatchEvaluation() {
         {results && (
           <button
             type="button"
-            onClick={exportCsv}
+            onClick={exportPdf}
             className="rounded-lg bg-slate-700 px-4 py-2 font-medium text-white hover:bg-slate-800"
           >
-            Export Results
+            Export PDF
           </button>
         )}
       </div>
@@ -215,6 +272,12 @@ function BatchEvaluation() {
               {summary.total ? Math.round((summary.pass / summary.total) * 100) : 0}%
             </p>
           </div>
+        </div>
+      )}
+
+      {!results && !loading && (
+        <div className="mt-6 rounded-xl border border-slate-200 bg-slate-50 p-6 text-center text-sm text-slate-600">
+          No batch evaluation results available. Upload a CSV to generate visualizations.
         </div>
       )}
 

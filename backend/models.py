@@ -11,6 +11,14 @@ class EvaluationRequest(BaseModel):
         default=None,
         description="Optional reference answer that can help with evaluation",
     )
+    model: Optional[str] = Field(
+        default=None,
+        description="Name of the AI system that generated the response",
+    )
+    dataset: Optional[str] = Field(
+        default=None,
+        description="Dataset source used for retrieval",
+    )
 
 
 class BatchEvaluationItem(BaseModel):
@@ -19,12 +27,52 @@ class BatchEvaluationItem(BaseModel):
     question: str = Field(..., min_length=1)
     response: str = Field(..., min_length=1)
     reference_answer: Optional[str] = Field(default=None)
+    model: Optional[str] = Field(default=None)
+    dataset: Optional[str] = Field(default=None)
 
 
 class BatchEvaluationRequest(BaseModel):
     """Batch evaluation request payload."""
 
     items: List[BatchEvaluationItem] = Field(..., min_length=1, max_length=100)
+    model: Optional[str] = Field(
+        default=None,
+        description="Name of the AI system that generated all responses in this batch",
+    )
+    dataset: Optional[str] = Field(
+        default=None,
+        description="Dataset source used for retrieval",
+    )
+
+
+class JudgeResult(BaseModel):
+    """Output returned by one judge agent."""
+
+    score: float = Field(..., ge=0, le=10, description="Score between 0 and 10")
+    reasoning: str = Field(..., description="Short explanation for the score")
+    missing_points: Optional[List[str]] = Field(default=None, description="List of missing points for completeness judge")
+    unsupported_claims: Optional[List[str]] = Field(default=None, description="List of unsupported claims for hallucination judge")
+
+
+class EvaluationRecord(BaseModel):
+    """Stored evaluation record for dashboard and reporting."""
+
+    id: str
+    question: str
+    response: str
+    reference_answer: Optional[str]
+    relevance: JudgeResult
+    accuracy: JudgeResult
+    hallucination: JudgeResult
+    completeness: JudgeResult
+    overall_score: float = Field(..., ge=0, le=10)
+    verdict: str
+    summary: str
+    retrieved_context: List[str]
+    timestamp: str
+    model: Optional[str]
+    dataset: Optional[str]
+    mode: str
 
 
 class BatchEvaluationResult(BaseModel):
@@ -53,15 +101,6 @@ class BatchEvaluationResponse(BaseModel):
     results: List[BatchEvaluationResult]
 
 
-class JudgeResult(BaseModel):
-    """Output returned by one judge agent."""
-
-    score: float = Field(..., ge=0, le=10, description="Score between 0 and 10")
-    reasoning: str = Field(..., description="Short explanation for the score")
-    missing_points: Optional[List[str]] = Field(default=None, description="List of missing points for completeness judge")
-    unsupported_claims: Optional[List[str]] = Field(default=None, description="List of unsupported claims for hallucination judge")
-
-
 class EvaluationResponse(BaseModel):
     """Final response returned by the backend API."""
 
@@ -73,3 +112,8 @@ class EvaluationResponse(BaseModel):
     verdict: str = Field(..., description="Pass, Needs Improvement, or Fail")
     summary: str = Field(..., description="Final evaluation summary")
     retrieved_context: List[str] = Field(..., description="Top relevant context chunks retrieved from the RAG source")
+    timestamp: str = Field(..., description="ISO timestamp of evaluation")
+    model: Optional[str] = Field(default=None, description="Model used for evaluation")
+    dataset: Optional[str] = Field(default=None, description="Dataset used for retrieval")
+    mode: str = Field(default="single", description="Evaluation mode: single or batch")
+    question: str = Field(..., description="The evaluated question")

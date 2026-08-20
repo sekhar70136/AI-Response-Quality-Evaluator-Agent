@@ -5,6 +5,7 @@ function InputForm({ onSubmit, loading }) {
     question: '',
     response: '',
     reference_answer: '',
+    model: '',
   });
 
   const handleChange = (event) => {
@@ -24,11 +25,12 @@ function InputForm({ onSubmit, loading }) {
       question: formData.question,
       response: formData.response,
       reference_answer: formData.reference_answer || null,
+      model: formData.model || null,
     });
   };
 
   const clearForm = () => {
-    setFormData({ question: '', response: '', reference_answer: '' });
+    setFormData({ question: '', response: '', reference_answer: '', model: '' });
   };
 
   return (
@@ -68,6 +70,17 @@ function InputForm({ onSubmit, loading }) {
           rows="3"
           className="rounded-lg border border-slate-300 p-3"
           placeholder="Optional reference answer"
+        />
+      </label>
+
+      <label className="mt-4 flex flex-col gap-2">
+        <span className="font-medium">AI System / Model Name (optional)</span>
+        <input
+          name="model"
+          value={formData.model}
+          onChange={handleChange}
+          className="rounded-lg border border-slate-300 p-3"
+          placeholder="e.g. llama-3.1-8b-instant, gpt-4, claude-3"
         />
       </label>
 

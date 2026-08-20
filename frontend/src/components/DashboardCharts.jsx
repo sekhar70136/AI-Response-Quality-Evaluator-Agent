@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import Chart from 'chart.js/auto';
 
 function DashboardCharts({ result }) {
   const radarRef = useRef(null);
